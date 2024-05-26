@@ -1,6 +1,4 @@
 import os
-import ezodf
-import re
 import traceback
 import requests
 import time
@@ -13,7 +11,7 @@ from unidecode import unidecode
 import pandas as pd
 import logging
 import xlrd
-module_logger = logging.getLogger('centgovspend_application')
+module_logger = logging.getLogger('centgovspend_application_log')
 base = 'https://www.gov.uk/government/'
 pubs = base + 'publications/'
 data = 'https://data.gov.uk/'

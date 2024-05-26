@@ -44,15 +44,15 @@ def end_banner():
 def setup_logging(logpath):
     if os.path.exists(logpath):
         if os.path.isfile(os.path.abspath(
-                          os.path.join(logpath, 'centgovspend.log'))):
+                          os.path.join(logpath, 'centgovspend_log.log'))):
             os.remove(os.path.abspath(
-                      os.path.join(logpath, 'centgovspend.log')))
+                      os.path.join(logpath, 'centgovspend_log.log')))
     else:
         os.makedirs(logpath)
     logger = logging.getLogger('centgovspend_application')
     logger.setLevel(logging.DEBUG)
     fh = logging.FileHandler((os.path.abspath(
-        os.path.join(logpath, 'centgovspend.log'))))
+        os.path.join(logpath, 'centgovspend_log.log'))))
     fh.setLevel(logging.DEBUG)
     ch = logging.StreamHandler()
     ch.setLevel(logging.ERROR)
