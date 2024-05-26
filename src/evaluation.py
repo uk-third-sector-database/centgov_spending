@@ -52,7 +52,7 @@ def evaluate_and_clean_merge(df, rawpath):
                     'personal expense', 'name withheld', 'name removed']
     for column in ['supplier', 'expensetype', 'expensearea']:
         for term in poss_redacts:
-            df = df[~df[column].str.lower.str.contains(term, na=False)]
+            df = df[~df[column].str.lower().str.contains(term, na=False)]
     print('Dropped ' + str(initial - len(df)) + ' redacted payments.')
     print('Dropped redacted payments worth £' +
           str(round((valuefull - df['amount'].sum()) / 1000000000, 2)) + 'bn.')
